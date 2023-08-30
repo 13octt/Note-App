@@ -21,7 +21,7 @@ class NoteItem extends StatelessWidget {
           subtitle: Text(
             'This is your notes',
             style: TextStyle(
-                color: Colors.black.withOpacity(.8), fontFamily: 'Poppins'),
+                color: Colors.black.withOpacity(.6), fontSize: 18, fontFamily: 'Poppins'),
           ),
           trailing: const IconButton(
             onPressed: null,
@@ -36,7 +36,7 @@ class NoteItem extends StatelessWidget {
           child: Text(
             'August 30',
             style: TextStyle(
-              color: Colors.black.withOpacity(.8),
+              color: Colors.black.withOpacity(.6),
             ),
           ),
         ),
