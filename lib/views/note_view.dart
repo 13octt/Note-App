@@ -13,6 +13,7 @@ class NoteView extends StatelessWidget {
             showModalBottomSheet(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(26)),
+                    
                 context: context,
                 builder: (context) {
                   return const AddNoteBottomSheet();
