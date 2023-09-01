@@ -12,6 +12,19 @@ void main() async {
   runApp(const NoteApp());
 }
 
+// Thêm note
+void addNote(String title, String subTitle, String date, int color) async {
+  final noteBox = await Hive.openBox<NoteModel>('notes_box');
+  final newNote = NoteModel(title: title, subTitle: subTitle, date: date, color: color);
+  noteBox.add(newNote);
+}
+
+// Truy vấn danh sách notes
+Future<List<NoteModel>> getNotes() async {
+  final noteBox = await Hive.openBox<NoteModel>('notes_box');
+  return noteBox.values.toList();
+}
+
 class NoteApp extends StatelessWidget {
   const NoteApp({super.key});
 

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/main.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widgets/custom_text_field.dart';
 import 'add_note_button.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +34,15 @@ class AddNoteForm extends StatefulWidget {
 }
 
 class _AddNoteFormState extends State<AddNoteForm> {
+  List<NoteModel> notes = []; // Danh sách lưu các note
+
   final GlobalKey<FormState> formKey = GlobalKey();
 
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   String? title, subTitle;
+
+  
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -70,6 +77,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             ),
             AddNoteButton(
               onTap: () {
+                // addNote('my list', 'my sublist', '13/10/2002', 0xffffff);
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
                 } else {
